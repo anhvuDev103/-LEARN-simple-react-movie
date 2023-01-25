@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Banner from './components/Banner';
+import Header from './components/Header';
+import MovieList from './components/movie/MovieList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Banner />
+      <section className="my-10 movie-layout body-container">
+        <h2 className="text-[30px] font-semibold mb-4">Now Playing</h2>
+        <MovieList type="now_playing"/>
+      </section>
+      <section className="my-10 movie-layout body-container">
+        <h2 className="text-[30px] font-semibold mb-4">Top rated</h2>
+        <MovieList type="top_rated"/>
+      </section>
+      <section className="my-10 movie-layout body-container">
+        <h2 className="text-[30px] font-semibold mb-4">Trending</h2>
+        <MovieList type="popular"/>
+      </section>
     </div>
   );
 }
